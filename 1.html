@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Подтвердите действие</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: left;
+        }
+        input {
+            border: 2px solid rgb(42, 10, 204);
+        }
+        button {
+            background-color: rgb(42, 10, 204);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="question">Подтвердите действие</h1>
+    <h2 id="nameQuestion">Как вас зовут?</h2>
+    <input type="text" id="nameInput">
+    <button onclick="displayName()">OK</button>
+    <button onclick="cancelAction()" id="cancelButton">Отмена</button>
+    <p id="output"></p>
+
+    <script>
+        function displayName() {
+            // Получаем значение из поля ввода
+            var name = document.getElementById("nameInput").value;
+            
+            // Выводим имя на страницу
+            document.getElementById("output").innerHTML = "Привет, " + name ;
+
+            // Скрываем элементы формы и кнопку "Отмена"
+            document.getElementById("nameInput").style.display = "none";
+            document.getElementById("nameQuestion").style.display = "none";
+            document.getElementById("cancelButton").style.display = "none";
+
+        }
+
+        function cancelAction() {
+            document.getElementById("output").innerHTML = "Действие отменено";
+        }
+    </script>
+</body>
+</html>
